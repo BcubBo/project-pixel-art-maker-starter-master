@@ -25,11 +25,7 @@ function makeGrid(args) {
             }
         }
         //console.log("循环创建表格结束！");
-        if(args[0] == undefined || args[1] == undefined){
-            alert("未设置画布大小！");
-        }else{
-            alert("此时画布大小为:"+args[0]+"X"+args[1]);
-        }
+
         
     }
 }
