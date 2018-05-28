@@ -13,12 +13,12 @@
         <h1>Lab: Pixel Art Maker</h1>
 
         <h2>Choose Grid Size</h2>
-        <form id="sizePicker">
+        <form id="sizePicker" >
             Grid Height:
             <input type="number" id="inputHeight" name="height" min="1" value="1">
             Grid Width:
             <input type="number" id="inputWeight" name="width" min="1" value="1">
-            <input type="submit" value="绘制">
+            <input type="submit" value="绘制" >
         </form>
 
         <h2>Pick A Color</h2>
@@ -29,17 +29,32 @@
         <table id="pixelCanvas">
             <tbody>
                 <tr>
-                    <td id="td_001" style="background-color: aqua">
-                    </td>
+                    <td class="td2"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
                 </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                </tr>               
             </tbody>
         </table>
 
         <script src="designs.js"></script>
         <script>
-            $("#sizePicker").on("submit",makeGrid
-
+            $("#sizePicker").on("click",makeGrid
             );
+            
+            $("td").on("click",drawing);
 
                
                         
