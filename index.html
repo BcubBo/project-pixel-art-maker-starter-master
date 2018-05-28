@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="jquery/jquery-3.3.1.js"></script>
 </head>
-<body>
+<body id="body">
         <h1>Lab: Pixel Art Maker</h1>
 
         <h2>Choose Grid Size</h2>
@@ -23,7 +23,7 @@
 
         <h2>Pick A Color</h2>
         <!--从此处取出颜色值-->
-        <input type="color" id="colorPicker" value="#7FFF00">
+        <input type="color" id="colorPicker" value="">
 
         <h2>Design Canvas</h2>
         <table id="pixelCanvas">
@@ -37,7 +37,25 @@
 
         <script src="designs.js"></script>
         <script>
-            $(makeGrid);
+            
+/*             $("#body").on('click',function(){
+
+                    console.log('already inside block!')
+                }); */
+
+                $("td").on('click',function(){
+                    console.log("td block clicked!");
+                })
+
+
+                let colorPicked = $('#colorPicker').val();
+                console.log(colorPicked);
+                $('#td_001').on('click','td',function(){
+                    $('#id_001').css('background-color',colorPicked);
+                    console.log(colorPicked);
+                    console.log("td block click! external output");
+                })
+                        
         </script>
 </body>
 </html>

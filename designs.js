@@ -7,4 +7,5 @@ function makeGrid() {
 //绘制表格，大前提，设置色彩。
 // Your code goes here!
 
+
 }
