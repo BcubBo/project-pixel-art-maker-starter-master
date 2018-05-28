@@ -23,7 +23,7 @@
 
         <h2>Pick A Color</h2>
         <!--从此处取出颜色值-->
-        <input type="color" id="colorPicker" value="">
+        <input type="color" id="colorPicker" >
 
         <h2>Design Canvas</h2>
         <table id="pixelCanvas">
@@ -50,8 +50,11 @@
 
                 let colorPicked = $('#colorPicker').val();
                 console.log(colorPicked);
-                $('#td_001').on('click','td',function(){
+                $('#td_001').on('click',function(){
+                    colorPicked = $('#colorPicker').val();
+
                     $('#id_001').css('background-color',colorPicked);
+                    
                     console.log(colorPicked);
                     console.log("td block click! external output");
                 })
