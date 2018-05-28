@@ -36,7 +36,6 @@ function getParam(){
         
     }
     let height , width;
-    console.log(height,width);
     let height_index , width_index;
     for (let i = 0;i<separate_arg.length;i++){
         let temp_container = separate_arg[i].split("=");
