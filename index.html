@@ -17,8 +17,8 @@
             Grid Height:
             <input type="number" id="inputHeight" name="height" min="1" value="1">
             Grid Width:
-            <input type="number" id="inputWeight" name="width" min="1" value="1">
-            <input type="submit" value="绘制" >
+            <input type="number" id="inputWidth" name="width" min="1" value="1">
+            <input type="submit" value="绘制" id="submit">
         </form>
 
         <h2>Pick A Color</h2>
@@ -51,9 +51,9 @@
 
         <script src="designs.js"></script>
         <script>
-            $("#sizePicker").on("click",makeGrid
+            $("#submit").on("click",makeGrid
             );
-            
+
             $("td").on("click",drawing);
 
                

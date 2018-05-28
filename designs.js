@@ -9,9 +9,9 @@ function makeGrid() {
 //动态的从数组中提取数据
 // Your code goes here!
     let height = $("#inputHeight").val();
-    let weight = $("#inputWeight").val();
+    let width = $("#inputwidth").val();
     console.log(height);
-    console.log(weight);
+    console.log(width);
     getParam();
     return false;
 }
@@ -33,8 +33,8 @@ function getParam(){
 
         
     }
-    let height , weight;
-    let height_index , weight_index;
+    let height , width;
+    let height_index , width_index;
     for (let i = 0;i<separate_arg.length;i++){
         let temp_container = separate_arg[i].split("=");
         console.log(temp_container);
@@ -42,10 +42,13 @@ function getParam(){
             height = temp_container[1];
             console.log(height);
         }else{
-            weight = temp_container[1];
-            console.log(weight);
+            width = temp_container[1];
+            console.log(width);
         }
     }
+    //将参数赋值回原位置
+    $("#inputHeight").val(height);
+    $("#inputWidth").val(width);
 
 }
 function drawing(){
