@@ -19,6 +19,7 @@
             Grid Width:
             <input type="number" id="inputWidth" name="width" min="1" max="50">
             <input type="submit" value="绘制" id="submit">
+            <input type="submit" value="清除" id="delete">
         </form>
 
         <h2>Pick A Color</h2>
@@ -33,10 +34,20 @@
 
         <script src="designs.js"></script>
         <script>
-            let args = getParam();
-            $("#submit").on("submit",makeGrid(args)
-            );
-            $("td").on("click",fillColor);
+            $(function(){
+
+                $("#submit").on("submit",makeGrid(getParam())
+                );
+
+                $("#delete").on("submit",deleteGrid);
+
+                $("td").on("click",fillColor);
+
+
+
+
+            })
+            
         </script>
 </body>
 </html>

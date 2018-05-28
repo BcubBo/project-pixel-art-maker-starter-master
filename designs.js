@@ -25,7 +25,18 @@ function makeGrid(args) {
             }
         }
         //console.log("循环创建表格结束！");
+        if(args[0] == undefined || args[1] == undefined){
+            alert("未设置画布大小！");
+        }else{
+            alert("此时画布大小为:"+args[0]+"X"+args[1]);
+        }
+        
     }
+}
+function deleteGrid(){
+    console.log("进入删除模块！");
+    $("tr").remove();
+
 }
 
 
@@ -46,6 +57,7 @@ function getParam(){
         
     }
     let height , width;
+    console.log(height,width);
     let height_index , width_index;
     for (let i = 0;i<separate_arg.length;i++){
         let temp_container = separate_arg[i].split("=");
@@ -59,9 +71,7 @@ function getParam(){
         }
     }
     let args = [height,width];
-    //将参数赋值回原位置
-    $("#inputHeight").val(height);
-    $("#inputWidth").val(width);
+    console.log(args.length);
     return args;
 }
 function fillColor(){
