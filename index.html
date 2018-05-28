@@ -29,7 +29,7 @@
         <table id="pixelCanvas">
             <tbody>
                 <tr>
-                    <td id="td_001">
+                    <td id="td_001" style="background-color: aqua">
                     </td>
                 </tr>
             </tbody>
@@ -37,27 +37,11 @@
 
         <script src="designs.js"></script>
         <script>
-            
-/*             $("#body").on('click',function(){
+            $("#sizePicker").on("submit",makeGrid
 
-                    console.log('already inside block!')
-                }); */
+            );
 
-                $("td").on('click',function(){
-                    console.log("td block clicked!");
-                })
-
-
-                let colorPicked = $('#colorPicker').val();
-                console.log(colorPicked);
-                $('#td_001').on('click',function(){
-                    colorPicked = $('#colorPicker').val();
-
-                    $('#id_001').css('background-color',colorPicked);
-                    
-                    console.log(colorPicked);
-                    console.log("td block click! external output");
-                })
+               
                         
         </script>
 </body>
