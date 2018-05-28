@@ -22,18 +22,22 @@
         </form>
 
         <h2>Pick A Color</h2>
-        <input type="color" id="colorPicker">
+        <!--从此处取出颜色值-->
+        <input type="color" id="colorPicker" value="#7FFF00">
 
         <h2>Design Canvas</h2>
         <table id="pixelCanvas">
             <tbody>
                 <tr>
-                    <td>
+                    <td id="td_001">
                     </td>
                 </tr>
             </tbody>
         </table>
 
         <script src="designs.js"></script>
+        <script>
+            $(makeGrid);
+        </script>
 </body>
 </html>
