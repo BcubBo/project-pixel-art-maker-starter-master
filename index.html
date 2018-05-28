@@ -15,10 +15,11 @@
         <h2>Choose Grid Size</h2>
         <form id="sizePicker" >
             Grid Height:
-            <input type="number" id="inputHeight" name="height" min="1" value="1">
+            <input type="number" id="inputHeight" name="height" min="1" max="500">
             Grid Width:
-            <input type="number" id="inputWidth" name="width" min="1" value="1">
+            <input type="number" id="inputWidth" name="width" min="1" max="500">
             <input type="submit" value="绘制" id="submit">
+            <input type="button" value="测试" id="testbutton">
         </form>
 
         <h2>Pick A Color</h2>
@@ -27,37 +28,19 @@
 
         <h2>Design Canvas</h2>
         <table id="pixelCanvas">
-            <tbody>
-                <tr>
-                    <td class="td2"></td>
-                    <td class="td2"></td>
-                    <td class="td1"></td>
-                    <td class="td2"></td>
-                </tr>
-                <tr>
-                    <td class="td1"></td>
-                    <td class="td2"></td>
-                    <td class="td1"></td>
-                    <td class="td2"></td>
-                </tr>
-                <tr>
-                    <td class="td1"></td>
-                    <td class="td2"></td>
-                    <td class="td1"></td>
-                    <td class="td2"></td>
-                </tr>               
+            <tbody id="tbody">             
             </tbody>
         </table>
 
         <script src="designs.js"></script>
         <script>
-            $("#submit").on("click",makeGrid
+            $("#submit").on("submit",makeGrid
             );
-
-            $("td").on("click",drawing);
-
-               
-                        
+            $("#testbutton").on("click",makeGrid);
+            let args = getParam();
+            console.log(args);
+            buildTable(args);
+            $("td").on("click",fillColor);
         </script>
 </body>
 </html>

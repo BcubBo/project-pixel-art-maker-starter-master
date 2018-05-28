@@ -7,13 +7,13 @@ function makeGrid() {
 //绘制表格，大前提，设置色彩。
 //在绘制的过程中要将每一个id进行单独存储
 //动态的从数组中提取数据
+//可以进行动态的添加td/tr了，但是要解决每一块独立class或者id 的问题
 // Your code goes here!
-    let height = $("#inputHeight").val();
-    let width = $("#inputwidth").val();
+    let height ,width ;
     console.log(height);
     console.log(width);
-    getParam();
-    return false;
+
+    //return false;
 }
 
 
@@ -46,16 +46,21 @@ function getParam(){
             console.log(width);
         }
     }
+    let args = [height,width];
     //将参数赋值回原位置
     $("#inputHeight").val(height);
     $("#inputWidth").val(width);
-
+    return args;
 }
-function drawing(){
+function fillColor(){
     let colorPicked = $('#colorPicker').val();
     console.log("drawing begin!");
-    $("td").on('click',function(){
+    $("#pixelCanvas").on('click','td',function(){
         console.log("td block clicked!");
+        $(this).css("backgroundColor",colorPicked);
+
+        console.log(colorPicked);
+        console.log("td block click! external output");
     })
     let allTd = $("td");
 
@@ -63,9 +68,23 @@ function drawing(){
     
     colorPicked = $('#colorPicker').val();
 
-    $(".td1").css("backgroundColor",colorPicked);
+    
 
-    console.log(colorPicked);
-    console.log("td block click! external output");
+}
+
+function buildTable(args){
+    console.log("进入创建表格函数！")
+    console.log("argsc参数为："+args);
+    for(let i = 0 ;i< args[0];i++){
+        $("#tbody").append('<tr id="tr'+i+'" ></tr>');
+        let temp_arg_id = "#tr"+i;
+        console.log("进入创建表格一层循环值为："+temp_arg_id);
+        for(let j = 0 ;j<args[1];j++){
+            console.log('进入二层循环中！');
+            console.log("二层循环中id为："+temp_arg_id);
+            $(temp_arg_id).append('<td class="td'+j+'"></td>');
+        }
+    }
+    console.log("循环创建表格结束！");
 
 }
